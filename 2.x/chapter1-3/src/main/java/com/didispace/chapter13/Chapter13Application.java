@@ -1,6 +1,8 @@
 package com.didispace.chapter13;
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +20,7 @@ public class Chapter13Application {
     @Slf4j
     @RestController
     static class HelloController {
-
+        Logger log = LoggerFactory.getLogger(getClass());
         @Value("${db:}")
         private String db;
 
